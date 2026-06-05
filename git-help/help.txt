@@ -1,0 +1,27 @@
+Inicialización y Cambios Locales
+git init
+Inicializa un nuevo repositorio de Git vacío en el directorio actual. 
+Crea la carpeta oculta .git que contiene la estructura interna y el historial de versiones.
+
+git add <archivo> (o git add . para todo)
+Mueve los cambios desde el directorio de trabajo al área de preparación (staging area). 
+Define exactamente qué modificaciones se incluirán en la próxima captura del proyecto.
+
+git commit -m "mensaje"
+Toma los archivos que están en el staging area y crea una nueva instantánea (commit) 
+en el historial de tu repositorio local. El flag -m permite adjuntar un mensaje descriptivo sin abrir un editor de texto.
+
+Interacción con Repositorios Remotos
+git fetch
+Descarga los metadatos y el historial de cambios del repositorio remoto a tu máquina local. 
+No modifica tus archivos de trabajo actuales ni hace fusiones (merges); 
+te permite revisar qué ha cambiado en el remoto antes de integrarlo.
+
+git pull
+Descarga los cambios del repositorio remoto y los fusiona automáticamente con tu rama local actual. 
+Es la ejecución secuencial de un git fetch seguido de un git merge.
+
+git push
+Sube los commits de tu repositorio local al repositorio remoto. 
+Sincroniza el servidor con el estado de tu rama local, 
+haciéndola disponible para otros colaboradores.
