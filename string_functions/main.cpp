@@ -13,7 +13,7 @@ int main () {
 	// int numero = stringToInt("50025");
 
 	// cout << numero;
-
+	// Hola 
 	vector<string> result = stringSplit("123.45", '.');
 
 	for (const auto& str : result) {
