@@ -4,6 +4,7 @@
 #include <string>
 #include <numeric>
 #include <algorithm>
+#include "conversion.h"
 
 using namespace std;
 
@@ -20,7 +21,7 @@ int main() {
 	getline(file, line);
 
 	while (getline(file, line, ',')) {
-		datos.push_back(stod(line));
+		datos.push_back(stringToDouble(line));
 	}
 
 	double sum = 0;

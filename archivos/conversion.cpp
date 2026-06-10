@@ -1,21 +1,5 @@
-#include <iostream>
-#include <cmath>
-#include <vector>
+#include "conversion.h"
 
-using namespace std;
-
-int stringToInt(string s);
-int potencia(int base, int exponente);
-double stringToDouble(string s);
-std::vector<string> stringSplit(string s, char split);
-
-int main () {
-	double numero = stringToDouble("123");
-
-    cout << numero << endl;
-
-    return 0;
-}
 
 int stringToInt(string s) {
 	int contPotencia = s.size() - 1;
@@ -37,10 +21,10 @@ double stringToDouble(string s) {
 
     double parteDecimal = (double) parteEntera;
 	if (partes.size() >= 2) {
-		for (unsigned int i = 0; i < partes[1].size(); i++) {
+		for (int i = 0; i < (int) partes[1].size(); i++) {
 			char letra = partes[1][i];
-
-			parteDecimal += (letra - '0') * pow(10, -(i + 1)); 
+			double pot = pow(10, -(i + 1));
+			parteDecimal += (letra - '0') * pot; 
 		}
 	}
 
