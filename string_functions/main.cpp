@@ -10,15 +10,11 @@ double stringToDouble(string s);
 std::vector<string> stringSplit(string s, char split);
 
 int main () {
-	// int numero = stringToInt("50025");
+	 double numero = stringToDouble("123.45");
 
-	// cout << numero;
-	// Hola 
-	vector<string> result = stringSplit("123.45", '.');
+    cout << numero << endl;
 
-	for (const auto& str : result) {
-		cout << str << endl;
-	}
+    return 0;
 }
 
 int stringToInt(string s) {
@@ -34,9 +30,22 @@ int stringToInt(string s) {
 }
 
 double stringToDouble(string s) {
-	// buscar el . de la string, luego del punto, utilizar potencias negativas. por ejemplo 10 ^ -1 =  0.1.
-	// utilizar la funcion pow, porque la funcion q desarrollamos es solo para potencias positivas.
+	
 	vector<string> partes = stringSplit(s, '.');
+	
+	int parteEntera = stringToInt(partes[0]);
+
+    double parteDecimal = 0;
+
+    for (int i = 0; i < partes[1].size(); i++) {
+        char letra = partes[1][i];
+
+        parteDecimal += (letra - '0') * pow(10, -(i + 1));
+    }
+
+    return parteEntera + parteDecimal;
+
+
 }
 
 std::vector<string> stringSplit(string s, char split) {
